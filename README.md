@@ -1,30 +1,57 @@
 # Dharma Grantham — Little Readers' Corner
 
-A responsive, child-friendly reading portal for the two Telugu books. The site is designed for browser reading only; it does not include visible download links or download buttons.
+A child-friendly, responsive reading portal for two Telugu books.
 
-## Deploy with GitHub Pages
+## GitHub Pages setup
 
-1. Open **Settings → Pages** in this repository.
-2. Choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-3. Upload the two final PDF files to the repository root using these exact names:
+1. Open **Settings → Pages**.
+2. Choose **Deploy from a branch**, select `main` and `/ (root)`.
+3. Upload the reviewed PDF files to the repository root:
    - `book1.pdf` — చిన్న కథలు, గొప్ప విలువలు
    - `book2.pdf` — చిన్న శ్లోకాలు మరియు గొప్ప విలువలు
-4. Open the published website and test both books on desktop and mobile.
+4. Visit the published Pages URL and test both books on desktop and mobile.
 
-The PDF files are not included in this initial commit. Add the final reviewed versions when ready.
+## Reader reviews — static GitHub-only workflow
 
-## Important: connect feedback before inviting readers
+This site has no review backend. It uses browser `localStorage` to save a visitor's draft review on that same device. It then lets the visitor download a JSON submission file. The file must be sent to the Dharma Grantham owner separately; it is **not automatically transmitted** to the owner and is **not automatically published**.
 
-The feedback form is currently a front-end placeholder. It validates the rating and fields, but does not persist or send submissions until a secure feedback endpoint is configured. Add a `feedback-endpoint` meta tag in `index.html` whose value is your HTTPS endpoint URL. The endpoint should validate input, rate-limit abuse, protect personal information, and store feedback for moderation. Keep database/service secrets on the server; never put admin keys in this page.
+### Publish approved reviews
 
-## Reading-only caveat
+1. Receive a visitor's `dharma-grantham-review-submissions.json` file.
+2. Review it manually. Remove spam, private information and any review that should not be published. For children's privacy, prefer first names or nicknames; do not publish contact details or identifying information.
+3. Open `reviews.json` in this repository.
+4. Add only approved review objects to its `reviews` array. Each object uses:
+   - `name` — display name
+   - `book` — book title
+   - `rating` — integer from 1 to 5
+   - `review` — review text
+5. Commit the updated `reviews.json` to `main`. GitHub Pages will publish the updated review cards after deployment.
 
-The page removes obvious download links and asks the browser PDF viewer to hide its toolbar. This is a convenience barrier, **not DRM**. A public PDF URL can still be retrieved by a determined visitor, and browser/PDF viewers may expose print or save controls depending on device and browser. Do not upload confidential or paid-final master files here. Publish watermarked preview copies if redistribution is a concern.
+Example:
 
-## Current status
+```json
+{
+  "reviews": [
+    {
+      "name": "A Parent",
+      "book": "చిన్న కథలు, గొప్ప విలువలు",
+      "rating": 5,
+      "review": "My child enjoyed the stories."
+    }
+  ]
+}
+```
 
-- Responsive child-friendly single page: included.
-- In-page PDF reader: wired to the two filenames above.
-- Bookmark reminder: included.
-- Feedback UI: included, but backend integration is still required.
-- PDF assets: waiting for the final files to be uploaded.
+The page reads `reviews.json` and fills the review cards from the approved public list. Empty placeholders remain when there are no published reviews.
+
+### Important limitations
+
+- Browser-saved pending reviews exist only in the browser/profile/device where they were submitted. Clearing site data can erase them.
+- The visitor must download and send the JSON file to you through a channel you choose.
+- Publishing is a manual owner action. This is deliberate: static GitHub Pages cannot securely accept and globally share anonymous submissions by itself.
+- Never place a GitHub token or repository write credential in frontend JavaScript.
+- Do not describe a submitted local review as received by Dharma Grantham until the JSON file has actually been delivered to the owner.
+
+## Reading mode
+
+The PDF reader renders pages onto a canvas with page and zoom controls. This hides normal browser PDF print/download controls, but it is not DRM: public PDF files can still be retrieved by technically capable visitors.
