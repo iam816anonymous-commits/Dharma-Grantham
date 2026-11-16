@@ -1,0 +1,27 @@
+PEDDAMMA'S BOX OF WONDERS — IMAGE ASSET PACK
+
+Upload all 12 JPG files in this folder to the ROOT of:
+iam816anonymous-commits/Dharma-Grantham
+
+Do not put them in a subfolder. Keep the exact filenames:
+cover.jpg
+ch01.jpg ... ch10.jpg
+finale.jpg
+
+The interactive HTML file loads these filenames from the repository root.
+The homepage and HTML reader have already been updated to frame square
+illustrations without cropping them.
+
+Chapter mapping:
+ch01 — glowing lota
+ch02 — dancing elephant shadow
+ch03 — children and the playful wind
+ch04 — kind-word seeds
+ch05 — bell calling the village together
+ch06 — spinning top and ants
+ch07 — rain falling upwards
+ch08 — opposite village in a mirror
+ch09 — key beneath the banyan tree
+ch10 — chalk bird coming alive
+
+After uploading, wait for GitHub Pages to deploy and refresh the site.
