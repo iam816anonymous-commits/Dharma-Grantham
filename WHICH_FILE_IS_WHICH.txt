@@ -1,0 +1,14 @@
+Replace these preview files with your ORIGINAL full-size images, using the same names.
+
+cover.jpg   <- input_file_31.png  (open trunk, Peddamma + two children)
+finale.jpg  <- input_file_33.png  (Peddamma with children around the trunk)
+ch01.jpg    <- input_file_34.png  (glowing lota)
+ch02.jpg    <- input_file_35.png  (elephant shadow)
+ch03.jpg    <- input_file_36.png  (wind spirit)
+ch04.jpg    <- input_file_37.png  (seeds and sprout)
+ch05.jpg    <- input_file_38.png  (bell and animals)
+ch07.jpg    <- input_file_40.png  (umbrella, upward rain)
+ch09.jpg    <- input_file_42.png  (banyan tree and key)
+
+STILL NEEDED: ch06 (top + ants), ch08 (mirror / opposite village), ch10 (slate + chalk bird).
+Until then those chapters show the built-in vector drawing.
