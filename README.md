@@ -64,6 +64,6 @@ The bookshelf links to two standalone interactive HTML eBooks:
 - `Krishnas_Little_World_Interactive_Ebook.html` — Krishna’s Little World.
 - `Peddammas_Box_of_Wonders_Interactive_Ebook.html` — Peddamma’s Box of Wonders.
 
-Keep both HTML files in the repository root. Peddamma’s eBook loads its illustrations from root-level image files such as `cover.jpg`, `finale.jpg`, and `ch01.jpg`–`ch09.jpg`. The available chapter images are `ch01`–`ch05`, `ch07`, and `ch09`; chapters 6, 8, and 10 use the built-in vector artwork until their original images are added. The homepage opens each interactive book in a separate tab, preserving the PDF reader and review workflow.
+Keep both HTML files in the repository root. Peddamma’s eBook loads its illustrations from root-level image files such as `cover.jpg`, `finale.jpg`, and `ch01.jpg`–`ch09.jpg`. The storybook uses root-level image assets named `cover.jpg`, `finale.jpg`, and `ch01.jpg`–`ch10.jpg`. Keep these filenames alongside the HTML file so all ten chapter illustrations load. The homepage opens each interactive book in a separate tab, preserving the PDF reader and review workflow.
 
 After GitHub Pages deploys, test both storybook links and their illustrations on desktop and mobile.
