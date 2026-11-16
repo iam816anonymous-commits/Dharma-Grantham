@@ -303,7 +303,7 @@ const UI={
 };
 const $=i=>document.getElementById(i);
 const EXT=['jpg','png','webp','jpeg'],HIT={},MISS=new Set(),pad=n=>String(n).padStart(2,'0');
-function IM(base,fb,cls){base='images/'+base;if(MISS.has(base))return fb&&ART[fb]?`<span class="fbsvg">${ART[fb]}</span>`:'';
+function IM(base,fb,cls){base=base;if(MISS.has(base))return fb&&ART[fb]?`<span class="fbsvg">${ART[fb]}</span>`:'';
  return `<img class="pimg ${cls||''}" alt="" data-b="${base}" data-x="0" data-fb="${fb||''}" src="${HIT[base]||base+'.jpg'}" onload="imgOk(this)" onerror="imgNx(this)">`}
 window.imgNx=function(el){const i=+el.dataset.x+1;if(i<EXT.length){el.dataset.x=i;el.src=el.dataset.b+'.'+EXT[i]}else{MISS.add(el.dataset.b);const fb=el.dataset.fb;if(fb&&ART[fb]){const w=document.createElement('span');w.className='fbsvg';w.innerHTML=ART[fb];el.replaceWith(w)}else el.remove()}};
 window.imgOk=function(el){HIT[el.dataset.b]=el.getAttribute('src');if(el.classList.contains('scene')){const p=el.closest('[data-hasimg]');if(p)p.classList.add('hasimg')}};
