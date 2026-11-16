@@ -55,3 +55,10 @@ The page reads `reviews.json` and fills the review cards from the approved publi
 ## Reading mode
 
 The PDF reader renders pages onto a canvas with page and zoom controls. This hides normal browser PDF print/download controls, but it is not DRM: public PDF files can still be retrieved by technically capable visitors.
+
+
+## Interactive Krishna storybook
+
+The bookshelf also links to `Krishnas_Little_World_Interactive_Ebook.html`, a standalone interactive eBook. Keep this HTML file in the repository root so the homepage link resolves correctly on GitHub Pages. The homepage opens it in a separate tab, preserving the existing PDF reader and review workflow.
+
+After pushing changes, allow GitHub Pages to finish deploying, then test the Krishna storybook link on desktop and mobile.
