@@ -1,6 +1,6 @@
 # Dharma Grantham — Little Readers' Corner
 
-A child-friendly, responsive reading portal for two Telugu books.
+A child-friendly, responsive reading portal for Telugu PDF books and interactive bilingual storybooks.
 
 ## GitHub Pages setup
 
@@ -57,8 +57,13 @@ The page reads `reviews.json` and fills the review cards from the approved publi
 The PDF reader renders pages onto a canvas with page and zoom controls. This hides normal browser PDF print/download controls, but it is not DRM: public PDF files can still be retrieved by technically capable visitors.
 
 
-## Interactive Krishna storybook
+## Interactive storybooks
 
-The bookshelf also links to `Krishnas_Little_World_Interactive_Ebook.html`, a standalone interactive eBook. Keep this HTML file in the repository root so the homepage link resolves correctly on GitHub Pages. The homepage opens it in a separate tab, preserving the existing PDF reader and review workflow.
+The bookshelf links to two standalone interactive HTML eBooks:
 
-After pushing changes, allow GitHub Pages to finish deploying, then test the Krishna storybook link on desktop and mobile.
+- `Krishnas_Little_World_Interactive_Ebook.html` — Krishna’s Little World.
+- `Peddammas_Box_of_Wonders_Interactive_Ebook.html` — Peddamma’s Box of Wonders.
+
+Keep both HTML files in the repository root. Peddamma’s eBook loads its illustrations from root-level image files such as `cover.jpg`, `finale.jpg`, and `ch01.jpg`–`ch09.jpg`. The available chapter images are `ch01`–`ch05`, `ch07`, and `ch09`; chapters 6, 8, and 10 use the built-in vector artwork until their original images are added. The homepage opens each interactive book in a separate tab, preserving the PDF reader and review workflow.
+
+After GitHub Pages deploys, test both storybook links and their illustrations on desktop and mobile.
